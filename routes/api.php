@@ -32,6 +32,7 @@ Route::post('/esp', function(Request $request){
 Route::get('/data', [DataController::class, 'index']);
 Route::post('/data', [DataController::class, 'store']);
 
+Route::post('/device', [DeviceController::class, 'store']);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
