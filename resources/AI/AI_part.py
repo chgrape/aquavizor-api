@@ -93,8 +93,7 @@ def parse_string(input_string):
 
 def get_predictions_for_a_device(id, location):
 
-    data_response = get('http://138.197.189.147' + f'/api/device/{id}?limit=6',
-            headers={'Authorization': f"Bearer 2|Hh6F8p6jgW3ZI6QB1JFT4d373ZBdqeMyR6Xgl4mNd9376768"})
+    data_response = get('http://138.197.189.147' + f'/api/device/{id}?limit=6')
     print(data_response.content.decode('utf-8'))
 
     prediction = generate_prediction(data_response.content.decode('utf-8'), location)
@@ -110,7 +109,7 @@ def get_predictions_for_a_device(id, location):
     }
 
     response = post(
-                'http://192.168.166.172:8000' + '/api/airesponse',
+                'http://138.197.189.147' + '/api/airesponse',
                 data=data
             )
     if response.status_code == 200:
@@ -121,7 +120,7 @@ def get_predictions_for_a_device(id, location):
     
 
 def get_devices_and_locations():
-    response = get('http://192.168.166.172:8000' + '/api/aidevices')
+    response = get('http://138.197.189.147' + '/api/aidevices')
     
     try:
         print(response.json())
