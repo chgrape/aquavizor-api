@@ -27,7 +27,7 @@ class GetAIResponses extends Command
      */
     public function handle()
     {
-        $process = new Process(['py', './resources/AI/AI_part.py']);
+        $process = new Process(['python3', './resources/AI/AI_part.py']);
         $process->run();
 
         // executes after the command finishes
