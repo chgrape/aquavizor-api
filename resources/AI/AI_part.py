@@ -93,7 +93,7 @@ def parse_string(input_string):
 
 def get_predictions_for_a_device(id, location):
 
-    data_response = get('http://192.168.166.172:8000' + f'/api/device/{id}?limit=6',
+    data_response = get('http://138.197.189.147' + f'/api/device/{id}?limit=6',
             headers={'Authorization': f"Bearer 2|Hh6F8p6jgW3ZI6QB1JFT4d373ZBdqeMyR6Xgl4mNd9376768"})
     print(data_response.content.decode('utf-8'))
 
